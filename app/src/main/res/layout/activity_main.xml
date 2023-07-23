@@ -6,18 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
-        android:text="Hello World"
+        android:src="@drawable/img"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="16sp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/singerName"
+        android:layout_width="wrap_content"
+        android:text="xxx Tentasion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        android:textSize="24sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_height="wrap_content"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:backgroundTint="#8C8C8C"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singerName"
+        android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <CheckBox
+        android:id="@+id/badcheck"
+        android:layout_width="wrap_content"
+        android:text="It's bad"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/seekbar"
+        android:layout_margin="24dp"
+        app:layout_constraintEnd_toStartOf="@id/greatcheck"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/greatcheck"
+        android:layout_width="wrap_content"
+        android:text="It's Great"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/seekbar"
+        android:layout_margin="24dp"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/badcheck"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp"
+        android:rating="4.5"
+        android:layout_height="wrap_content"/>
+
+
+    <RadioButton
+        android:id="@+id/favroite"
+        android:layout_width="wrap_content"
+        android:text="It's My a favorite kind of music."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/badcheck"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:checked="true"
+        android:layout_margin="12dp"
+        android:layout_height="wrap_content"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:text="It's not My favorite kind of music."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favroite"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_margin="12dp"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
